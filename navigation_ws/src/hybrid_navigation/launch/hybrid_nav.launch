@@ -1,0 +1,11 @@
+<launch>
+    <!-- Iniciar ZED 2i -->
+    <include file="$(find zed_wrapper)/launch/zed2i.launch"/>
+    
+    
+    <!-- Nodos de navegación híbrida -->
+    <node name="vfh_node" pkg="hybrid_navigation" type="vfh_node.py" output="screen"/>
+    <node name="yolo_node" pkg="hybrid_navigation" type="yolo_node.py" output="screen"/>
+    <node name="fusion_node" pkg="hybrid_navigation" type="fusion_node.py" output="screen"/>
+    <!--node name="control_node" pkg="hybrid_navigation" type="control_node.py" output="screen"/-->
+</launch>
